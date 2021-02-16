@@ -10,15 +10,15 @@ const images = [
     caption: 'beautiful!'
   },
   {
-    url: 'http://placeimg.com/701/400/nature',
+    url: 'http://placeimg.com/700/403/nature',
     caption: 'awesome!'
   },
   {
-    url: 'http://placeimg.com/702/400/nature',
+    url: 'http://placeimg.com/700/402/nature',
     caption: 'cool!'
   },
   {
-    url: 'http://placeimg.com/703/400/nature',
+    url: 'http://placeimg.com/700/401/nature',
     caption: 'crazy!'
   }
 ];
