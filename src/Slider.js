@@ -22,6 +22,20 @@ class Slider extends React.Component {
     clearTimeout(this.transitionTimeout);
   };
 
+  handleTouchStart = e => {
+    this.lastTouch = e.nativeEvent.touches[0].clientX;
+  };
+  handleTouchMove = e => {
+    const delta = this.lastTouch - e.nativeEvent.touches[0].clientX;
+    this.lastTouch = e.nativeEvent.touches[0].clientX;
+
+    this.handleMovement(delta);
+  };
+  handleTouchEnd = () => {
+    this.handleMovementEnd();
+    this.lastTouch = 0;
+  };
+
   handleWheel = e => {
     clearTimeout(this.wheelTimeout);
     this.handleMovement(e.deltaX);
@@ -97,6 +111,9 @@ class Slider extends React.Component {
             width: `${IMG_WIDTH}px`,
             height: `${IMG_HEIGHT}px`,
           }}
+          onTouchStart={this.handleTouchStart}
+          onTouchMove={this.handleTouchMove}
+          onTouchEnd={this.handleTouchEnd}
           onWheel={this.handleWheel}
         >
           <div
